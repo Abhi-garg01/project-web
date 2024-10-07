@@ -5,7 +5,7 @@ app.use(express.static("public"));
 const fileuploader = require("express-fileupload");
 const mysql2 = require("mysql2");
 app.use(fileuploader());
-app.listen(150, function() {
+app.listen(3000, function() {
 
 
     console.log("yeesssssss");
@@ -80,23 +80,34 @@ app.use(express.urlencoded({ extended: true }));
     resp.send(req.body);
     
 });*/
+/*const serverObj = {
+    host: "127.0.0.1",
+    user: "root",
+    password: "A#1134@grg",
+    database: "project",
+    dateStrings: true
+
+}*/
+const serverObj = {
+    host: "bmwpnf7087zvesfrw9dh-mysql.services.clever-cloud.com",
+    user: "uidugmc5uyq5djs8",
+    password: "kAQhc424WZgm09Nc6TqB",
+    database: "bmwpnf7087zvesfrw9dh",
+    dateStrings: true,
+    KeepInitialAliveDelay:10000,
+    enableKeepAlive:true,
+
+
+}
+
 // const serverObj = {
-//     host: "127.0.0.1",
-//     user: "root",
-//     password: "rajat@1406",
-//     database: "project",
+//     host: "btyr6y05je2n8p0ffyag-mysql.services.clever-cloud.com",
+//     user: "u0wwwjsoocgavq9a",
+//     password: "usA1XChUgwIGoZbNT0Zy",
+//     database: "btyr6y05je2n8p0ffyag",
 //     dateStrings: true
 
 // }
-
-const serverObj = {
-    host: "btyr6y05je2n8p0ffyag-mysql.services.clever-cloud.com.1",
-    user: "u0wwwjsoocgavq9a",
-    password: "usA1XChUgwIGoZbNT0Zy",
-    database: "btyr6y05je2n8p0ffyag",
-    dateStrings: true
-
-}
 const mysql = mysql2.createConnection(serverObj);
 
 mysql.connect(function(err) {
